@@ -55,7 +55,7 @@ public:
 
 int main() {
 
-	// Проверка принципа Лисков
+	// Check Liskov principle
 	Rectangle a_(3,1), b_(1,3);
 	Square a(1), b(1);
 	
@@ -66,7 +66,7 @@ int main() {
 	if (a.area() != b.area()) {
 		cout << "LSP is violated" << endl;
 	}
-	// Принцип Лисков нарушается
+	// The Liskov principle is violated
 
 	return 0;
 }

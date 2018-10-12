@@ -2,16 +2,16 @@
 #include <assert.h> 
 using namespace std;
 
-// Предлагается использование immutable классов.
-// Кажется, что исключение возможность изменения ширины и высоты объектов не нарушает ни математической, ни програмнной логики.
+// It is proposed to use immutable classes.
+// It seems that the exclusion of the possibility of changing the width and height of objects does not violate either mathematical or software logic.
 
 class Rectangle
 {
-public:
-	const int length; 
+protected:
+	const int length;
 	const int height;
-
-	Rectangle(int _length=1, int _height=1) :length(_length), height(_height) {};
+public:
+	Rectangle(int _length, int _height) :length(_length), height(_height) {};
 
 	int virtual getLength() {
 		assert(this->length > 0);
@@ -42,8 +42,7 @@ public:
 class Square : public Rectangle
 {
 public:
-	Square(int side=1) : Rectangle(side,side) {};
-
+	Square(int side) : Rectangle(side,side) {};
 };
 
 

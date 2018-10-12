@@ -8,7 +8,7 @@ public:
 	int length;
 	int height;
 
-	Rectangle(int _length=1, int _height=1) :length(_length), height(_height) {};
+	Rectangle(int _length, int _height) :length(_length), height(_height) {};
 	void virtual setLength(int _length) {
 		assert(_length > 0);
 		this->length = _length;
@@ -42,6 +42,7 @@ public:
 class Square : public Rectangle
 {
 public:
+	Square(int _side) :Rectangle(_side, _side) {};
 	void setLength(int _length) {
 		this->length = _length;
 		this->height = _length;
@@ -55,8 +56,8 @@ public:
 int main() {
 
 	// Проверка принципа Лисков
-	Rectangle a, b;
-	Square a_, b_;
+	Rectangle a_(3,1), b_(1,3);
+	Square a(1), b(1);
 	
 	a.setHeight(4);
 	a.setLength(5);
